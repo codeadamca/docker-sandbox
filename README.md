@@ -2,7 +2,7 @@
 
 A sandbox for messing around with Docker.
 
-> Notes  
+> [!Note]  
 > The most recent PHP/Apache Docker image does not include the `mysqli` library. This additional step needs to be completed:
 > https://github.com/docker-library/php/issues/391
 
