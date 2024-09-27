@@ -1,3 +1,5 @@
+# livecode.codeadam.ca
+
 version: "3"
 services:
   www:
@@ -7,10 +9,8 @@ services:
     volumes:
       - "./www:/var/www/html"
     ports:
-      - 80:80
-      - 443:443
-    networks:
-      - demo
+      - 81:80
+      - 444:443
     command: "/bin/sh -c 'docker-php-ext-install mysqli && exec apache2-foreground'"
   db:
     image: mysql:latest
@@ -21,19 +21,12 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
       - "./db:/docker-entrypoint-initdb.d"
-    networks:
-      - demo
   phpmyadmin:
     depends_on:
       - db
     image: phpmyadmin:latest
     ports:
-      - 81:80
+      - 82:80
     environment:
-      - PMA_HOST=db
-      - PMA_PORT=3306
-    networks:
-      - demo
-networks:
-  demo:
-    driver: bridge
+      PMA_HOST: db
+      PMA_POST: 3306
