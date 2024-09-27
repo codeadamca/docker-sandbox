@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: db
--- Generation Time: Jun 12, 2024 at 08:44 PM
+-- Host: db:3306
+-- Generation Time: Sep 27, 2024 at 02:04 PM
 -- Server version: 8.0.33
 -- PHP Version: 8.2.15
 
@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `colours` (
   `id` int NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `rgb` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `colours`
 --
 
-INSERT INTO `colours` (`id`, `name`) VALUES
-(1, 'Red'),
-(2, 'Blue'),
-(3, 'Green'),
-(4, 'Purple');
+INSERT INTO `colours` (`id`, `name`, `rgb`) VALUES
+(1, 'Red', '#FF0000'),
+(2, 'Blue', '#0000FF'),
+(3, 'Green', '#00FF00');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +60,7 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `colours`
 --
 ALTER TABLE `colours`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
